@@ -35,3 +35,12 @@ jobs:
 
       # run tests!
       - run: yarn ng build --prod
+      - run:
+          command: |
+            docker build -t indraapp.azurecr.io/prastuti:1.0 .
+      - run:
+          command: |
+            docker login --username $DOCKER_USER --password $DOCKER_PASS indraapp.azurecr.io
+      - run:
+          command: |
+            docker push indraapp.azurecr.io/prastuti:1.0

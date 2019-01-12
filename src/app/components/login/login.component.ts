@@ -11,14 +11,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
   login(type) {
-    if (type === 'google') {
-      this.authService.loginWithGoogle();
-    } else if (type === 'facebook') {
-      this.authService.loginWithFacebook();
-    } else if (type === 'twitter') {
-      this.authService.loginWithTwitter();
-    } else {
-      console.log('Login Pressed');
-    }
+    console.log(type);
   }
 }
